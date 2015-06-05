@@ -8,7 +8,7 @@ using LeagueSharp.Common;
 using Color = System.Drawing.Color;
 
 
-namespace Nunu
+namespace LSharpNunu
 {
     public class Drawings
     {

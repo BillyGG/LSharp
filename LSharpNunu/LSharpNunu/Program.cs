@@ -7,7 +7,7 @@ using LeagueSharp;
 using LeagueSharp.Common;
 using SharpDX;
 
-namespace Nunu
+namespace LSharpNunu
 {
     internal class Program
     {

@@ -9,7 +9,7 @@ using LeagueSharp.Common.Data;
 using SharpDX;
 using System.Drawing;
 
-namespace Nunu
+namespace LSharpNunu
 {
     enum Spells
     {
@@ -66,7 +66,6 @@ namespace Nunu
             Game.OnUpdate += OnGameUpdate;
             Drawing.OnDraw += Drawings.Drawing_OnDraw;
             Drawing.OnEndScene += Drawings.OnDrawEndScene;
-            //Orbwalking.AfterAttack += OrbwalkingAfterAttack;
         }
 
         #endregion GameLoaded

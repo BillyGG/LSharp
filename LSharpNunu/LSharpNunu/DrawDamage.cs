@@ -5,9 +5,9 @@ using LeagueSharp.Common;
 using SharpDX;
 using Color = System.Drawing.Color;
 
-namespace Nunu
+namespace LSharpNunu
 {
-    class DrawDamage //by xSalice
+    class DrawDamage
     {
         public delegate float DamageToUnitDelegate(Obj_AI_Hero hero);
 

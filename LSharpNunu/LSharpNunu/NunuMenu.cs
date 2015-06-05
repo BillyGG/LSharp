@@ -9,12 +9,8 @@ using SharpDX;
 using Color = System.Drawing.Color;
 
 
-namespace Nunu
+namespace LSharpNunu
 {
-    /// <summary>
-    ///    Nunu Menu handler
-    ///    Goodguy FluxySenpai for Smite stuff ._.
-    /// </summary>
     public class NunuMenu
     {
 
