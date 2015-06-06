@@ -18,7 +18,7 @@ namespace LSharpNunu
 
         public static void Initialize()
         {
-            _menu = new Menu("Nunu", "menu", true);
+            _menu = new Menu("LSharp - Nunu", "menu", true);
 
             //Nunu.Orbwalker
             var orbwalkerMenu = new Menu("Orbwalker", "orbwalker");

@@ -1,0 +1,2 @@
+C:\Users\Billy\Documents\GitHub\LeagueSharp-Master\LSharpAlistar\LSharpAlistar\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\Billy\Documents\GitHub\LeagueSharp-Master\LSharpAlistar\LSharpAlistar\obj\Debug\LSharpAlistar.csprojResolveAssemblyReference.cache

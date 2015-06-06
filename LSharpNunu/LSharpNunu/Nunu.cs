@@ -60,7 +60,7 @@ namespace LSharpNunu
             if (ObjectManager.Player.BaseSkinName != ChampName)
                 return;
 
-            Notifications.AddNotification("Nunu Loaded By BillyGG", 5000);
+            Notifications.AddNotification("LSharp - Nunu Loaded By BillyGG", 5000);
 
             NunuMenu.Initialize();
             Game.OnUpdate += OnGameUpdate;
