@@ -1,0 +1,13 @@
+C:\Users\Billy\Documents\GitHub\LeagueSharp-Master\LSharpVayne\LSharpVayne\bin\Release\LSharpVayne.exe.config
+C:\Users\Billy\Documents\GitHub\LeagueSharp-Master\LSharpVayne\LSharpVayne\bin\Release\LSharpVayne.exe
+C:\Users\Billy\Documents\GitHub\LeagueSharp-Master\LSharpVayne\LSharpVayne\bin\Release\LSharpVayne.pdb
+C:\Users\Billy\Documents\GitHub\LeagueSharp-Master\LSharpVayne\LSharpVayne\bin\Release\LeagueSharp.Common.dll
+C:\Users\Billy\Documents\GitHub\LeagueSharp-Master\LSharpVayne\LSharpVayne\bin\Release\LeagueSharp.dll
+C:\Users\Billy\Documents\GitHub\LeagueSharp-Master\LSharpVayne\LSharpVayne\bin\Release\SharpDX.dll
+C:\Users\Billy\Documents\GitHub\LeagueSharp-Master\LSharpVayne\LSharpVayne\bin\Release\SharpDX.Direct3D9.dll
+C:\Users\Billy\Documents\GitHub\LeagueSharp-Master\LSharpVayne\LSharpVayne\bin\Release\clipper_library.dll
+C:\Users\Billy\Documents\GitHub\LeagueSharp-Master\LSharpVayne\LSharpVayne\bin\Release\LeagueSharp.Sandbox.dll
+C:\Users\Billy\Documents\GitHub\LeagueSharp-Master\LSharpVayne\LSharpVayne\bin\Release\LeagueSharp.xml
+C:\Users\Billy\Documents\GitHub\LeagueSharp-Master\LSharpVayne\LSharpVayne\obj\Debug\LSharpVayne.csprojResolveAssemblyReference.cache
+C:\Users\Billy\Documents\GitHub\LeagueSharp-Master\LSharpVayne\LSharpVayne\obj\Debug\LSharpVayne.exe
+C:\Users\Billy\Documents\GitHub\LeagueSharp-Master\LSharpVayne\LSharpVayne\obj\Debug\LSharpVayne.pdb

@@ -111,5 +111,10 @@ namespace LSharpAlistar
                 spells[Spells.R].Cast(Player);
             }
         }
+
+        private static void LaneClear()
+        {
+
+        }
     }
 }
