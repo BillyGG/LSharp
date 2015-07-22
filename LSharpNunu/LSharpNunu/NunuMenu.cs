@@ -31,7 +31,7 @@ namespace LSharpNunu
             _menu.AddSubMenu(targetSelector);
 
             //Nunu.Menu
-            var comboMenu = _menu.AddSubMenu(new LeagueSharp.Common.Menu("Combo", "Combo"));
+            var comboMenu = _menu.AddSubMenu(new Menu("Combo", "Combo"));
             comboMenu.AddItem(new MenuItem("Nunu.Combo.R", "Use R").SetValue(true));
             comboMenu.AddItem(new MenuItem("Nunu.Combo.RCount", "Enemies in Range to use R").SetValue(new Slider(3, 1, 5)));
             comboMenu.AddItem(new MenuItem("Nunu.Combo.W", "Use W").SetValue(true));
