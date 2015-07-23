@@ -52,17 +52,17 @@ namespace MadlifeThresh
             spells[Spells.Q2].SetSkillshot(0.500f, 70f, 1900f, true, SkillshotType.SkillshotLine);
 
             MadlifeThreshMenu.Initialize();
+            Console.WriteLine("Madlife Thresh Loaded");
+            Notifications.AddNotification("Madlife Thresh Loaded - CSharp", 10000);
             Game.OnUpdate += OnGameUpdate;
-            Drawing.OnDraw += Drawings.Drawing_OnDraw;
-            Drawing.OnEndScene += Drawings.OnDrawEndScene;
+            //Drawing.OnDraw += Drawings.Drawing_OnDraw;
+            //Drawing.OnEndScene += Drawings.OnDrawEndScene;
         }
 
         private static void OnGameUpdate(EventArgs args)
         {
             if (MadlifeThreshMenu._menu.Item("Thresh.mlh.active").IsActive())
-            {
                 MadlifeHook();
-            }
             switch (Orbwalker.ActiveMode)
             {
                 case Orbwalking.OrbwalkingMode.Combo:
@@ -108,12 +108,38 @@ namespace MadlifeThresh
         private static void MadlifeHook()
         {
             var target = TargetSelector.GetTarget(1000f, TargetSelector.DamageType.Magical);
-            
-            if (target.GetSpellSlot("summonerflash").IsReady() && Player.Spellbook.GetSpell(SpellSlot.Q).IsReady())
+
+            if (Player.Spellbook.GetSpell(SpellSlot.Q).IsReady())
             {
-                spells[Spells.Q].Cast(target.Position + FlashRange);
+                if (Player.Team == GameObjectTeam.Order)
+                {
+                    spells[Spells.Q].Cast(target.Position + target.Direction + 450);
+                }
+                else
+                {
+                    spells[Spells.Q].Cast(target.Position + target.Direction - 450);
+                }
             }
         }
+        //private static void MadlifeHook()
+        //{
+        //    var target = TargetSelector.GetTarget(1000f, TargetSelector.DamageType.Magical);
+
+        //    if (target.GetSpellSlot("summonerflash").IsReady() && Player.Spellbook.GetSpell(SpellSlot.Q).IsReady())
+        //    {
+        //        spells[Spells.Q].Cast(target.Position + FlashRange);
+        //    }
+        //}
+        //private static void MadlifeHook()
+        //{
+        //    var target = TargetSelector.GetTarget(1000f, TargetSelector.DamageType.Magical);
+        //    var x = target.Position.Extend(Prediction.GetPrediction(target, 0).UnitPosition, FlashRange);
+
+        //    if (Player.Distance(x) <= spells[Spells.Q].Range)
+        //    {
+        //        spells[Spells.Q].Cast(x);
+        //    }
+        //}
 
         private static void ThrowLantern()
         {
@@ -160,7 +186,7 @@ namespace MadlifeThresh
             }
 
             if (spells[Spells.Q2].IsReady() && MadlifeThreshMenu._menu.Item("Thresh.Combo.Q2").GetValue<bool>() &&
-                System.Environment.TickCount - FirstQTime > 3000f && T.HasBuff(ThreshQBuff))
+                System.Environment.TickCount - FirstQTime > 10000000f && T.HasBuff(ThreshQBuff))
             {
                 spells[Spells.Q2].Cast();
             }

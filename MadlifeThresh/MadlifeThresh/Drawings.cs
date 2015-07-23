@@ -16,7 +16,7 @@ namespace MadlifeThresh
             if (MadlifeThresh.Player.IsDead)
                 return;
 
-            var drawOff = MadlifeThreshMenu._menu.Item("Thresh.Draw.off").GetValue<bool>();
+            var drawOff = MadlifeThreshMenu._menu.Item("Thresh.Draw.enable").GetValue<bool>();
             var drawQ = MadlifeThreshMenu._menu.Item("Thresh.Draw.q").GetValue<Circle>();
             var drawW = MadlifeThreshMenu._menu.Item("Thresh.Draw.W").GetValue<Circle>();
             var drawE = MadlifeThreshMenu._menu.Item("Thresh.Draw.E").GetValue<Circle>();
@@ -42,9 +42,10 @@ namespace MadlifeThresh
                     Render.Circle.DrawCircle(ObjectManager.Player.Position, MadlifeThresh.spells[Spells.R].Range, Color.White);
         }
 
-        internal static void OnDrawEndScene(EventArgs args)
+        public static void OnDrawEndScene(EventArgs args)
         {
-            throw new NotImplementedException();
+            if (MadlifeThresh.Player.IsDead)
+                return;
         }
     }
 }

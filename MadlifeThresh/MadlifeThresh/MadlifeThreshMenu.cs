@@ -43,7 +43,7 @@ namespace MadlifeThresh
             //Madlife Hook Menu
             var mlhMenu = _menu.AddSubMenu(new Menu("MLH", "Madlife Hook Config"));
             mlhMenu.AddItem(new MenuItem("Thresh.mlh.active", "Press this key to throw a Madlife hook").SetValue(new KeyBind("G".ToCharArray()[0], KeyBindType.Press)));
-            mlhMenu.AddItem(new MenuItem("Thresh.mlh.dashes", "Throw at Flash Range").SetValue(true));
+            mlhMenu.AddItem(new MenuItem("Thresh.mlh.flash", "Throw at Flash Range").SetValue(true));
             mlhMenu.AddItem(new MenuItem("Thresh.mlh.dashes", "Throw at Dash Range (Ezreal, Graves, Lucian)").SetValue(false));
 
             //Clear
@@ -73,6 +73,14 @@ namespace MadlifeThresh
             var ultMenu = _menu.AddSubMenu(new Menu("Ult Settings", "UltSettings"));
             ultMenu.AddItem(new MenuItem("Thresh.UltSettings.AutoUlt", "Auto Ult when enemies > X").SetValue(new Slider(3, 1, 6)));
             ultMenu.AddItem(new MenuItem("Thresh.UltSettings.AutoUltCont", "Change to 6 to disable AutoUlt"));
+
+            //Drawings
+            var drawMenu = _menu.AddSubMenu(new Menu("Drawings", "Drawings"));
+            drawMenu.AddItem(new MenuItem("Thresh.Draw.enable", "Enable Drawings").SetValue(true));
+            drawMenu.AddItem(new MenuItem("Thresh.Draw.q", "Draw Q").SetValue(new Circle()));
+            drawMenu.AddItem(new MenuItem("Thresh.Draw.w", "Draw W").SetValue(new Circle()));
+            drawMenu.AddItem(new MenuItem("Thresh.Draw.e", "Draw E").SetValue(new Circle()));
+            drawMenu.AddItem(new MenuItem("Thresh.Draw.r", "Draw R").SetValue(new Circle()));
 
             _menu.AddToMainMenu();
 
