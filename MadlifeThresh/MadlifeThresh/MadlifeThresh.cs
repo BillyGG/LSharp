@@ -53,8 +53,8 @@ namespace MadlifeThresh
 
             MadlifeThreshMenu.Initialize();
             Game.OnUpdate += OnGameUpdate;
-            //Drawing.OnDraw += Drawings.Drawing_OnDraw;
-            //Drawing.OnEndScene += Drawings.OnDrawEndScene;
+            Drawing.OnDraw += Drawings.Drawing_OnDraw;
+            Drawing.OnEndScene += Drawings.OnDrawEndScene;
         }
 
         private static void OnGameUpdate(EventArgs args)
@@ -109,14 +109,9 @@ namespace MadlifeThresh
         {
             var target = TargetSelector.GetTarget(1000f, TargetSelector.DamageType.Magical);
             
-            if (target.GetSpellSlot("summonerflash").IsReady() && spells[Spells.Q].IsReady())
+            if (target.GetSpellSlot("summonerflash").IsReady() && Player.Spellbook.GetSpell(SpellSlot.Q).IsReady())
             {
                 spells[Spells.Q].Cast(target.Position + FlashRange);
-                if (target.HasBuff(ThreshQBuff))
-                {
-
-                    Console.WriteLine("Madlife hooked");
-                }
             }
         }
 
