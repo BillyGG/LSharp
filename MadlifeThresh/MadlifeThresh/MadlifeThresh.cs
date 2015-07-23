@@ -100,10 +100,10 @@ namespace MadlifeThresh
             }
         }
 
-        //private static void MadlifeHook()
-        //{
-        //    throw new NotImplementedException();
-        //}
+        private static void MadlifeHook()
+        {
+            throw new NotImplementedException();
+        }
 
         private static void ThrowLantern()
         {
@@ -170,6 +170,14 @@ namespace MadlifeThresh
                 {
                     spells[Spells.E].Cast(T.Position);
                 }
+            }
+
+            var Rcount = Utility.CountEnemiesInRange(Player, spells[Spells.R].Range);
+            var ReqRcount = MadlifeThreshMenu._menu.Item("Thresh.Combo.R.Config").GetValue<Slider>().Value;
+
+            if (spells[Spells.R].IsReady() && MadlifeThreshMenu._menu.Item("Thresh.Combo.R").GetValue<bool>() && ReqRcount <= Rcount)
+            {
+                spells[Spells.R].Cast();
             }
 
         }

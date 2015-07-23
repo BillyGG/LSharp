@@ -35,9 +35,10 @@ namespace MadlifeThresh
             comboMenu.AddItem(new MenuItem("Thresh.Combo.Q2", "Use Q2").SetValue(true));
             comboMenu.AddItem(new MenuItem("Thresh.Combo.W", "Use W to Ally on Engage").SetValue(true));
             comboMenu.AddItem(new MenuItem("Thresh.Combo.E", "Use E").SetValue(true));
+            comboMenu.AddItem(new MenuItem("Thresh.Combo.R", "Use R").SetValue(true));
+            comboMenu.AddItem(new MenuItem("Thresh.Combo.R.Config", "Use R only when enemies >= x").SetValue(new Slider(2, 1, 5)));
             comboMenu.AddItem(new MenuItem("Thresh.Combo.separator", ""));
             comboMenu.AddItem(new MenuItem("Thresh.Combo.Ignite", "Use Ignite").SetValue(true));
-            comboMenu.AddItem(new MenuItem("ComboActive", "Combo!").SetValue(new KeyBind(32, KeyBindType.Press)));
 
             //Clear
 
@@ -65,7 +66,7 @@ namespace MadlifeThresh
             //Ult
             var ultMenu = _menu.AddSubMenu(new Menu("Ult Settings", "UltSettings"));
             ultMenu.AddItem(new MenuItem("Thresh.UltSettings.AutoUlt", "Auto Ult when enemies > X").SetValue(new Slider(3, 1, 6)));
-            ultMenu.AddItem(new MenuItem("Thresh.UltSettings.AutoUltCont", ""));
+            ultMenu.AddItem(new MenuItem("Thresh.UltSettings.AutoUltCont", "Change to 6 to disable AutoUlt"));
 
             _menu.AddToMainMenu();
 
