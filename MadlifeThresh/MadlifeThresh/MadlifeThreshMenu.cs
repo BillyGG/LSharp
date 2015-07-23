@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 using LeagueSharp;
 using LeagueSharp.Common;
 using SharpDX;
+using Color = System.Drawing.Color;
 
 namespace MadlifeThresh
 {
     class MadlifeThreshMenu
     {
+
         public static Menu _menu;
 
         public static void Initialize()

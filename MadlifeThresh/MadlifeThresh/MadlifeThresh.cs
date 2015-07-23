@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using LeagueSharp;
 using LeagueSharp.Common;
+using LeagueSharp.Common.Data;
+using SharpDX;
+using System.Drawing;
 
 namespace MadlifeThresh
 {
     enum Spells
     {
-        Q,
-        Q2,
-        W,
-        E,
-        R
+        Q, Q2, W, E, R
     }
 
     internal class MadlifeThresh
@@ -48,7 +49,7 @@ namespace MadlifeThresh
 
         public static void Game_OnGameLoad(EventArgs args)
         {
-            if (CharData.BaseSkinName != "Thresh")
+            if (CharData.BaseSkinName != ChampName)
                 return;
 
             spells[Spells.Q].SetSkillshot(0.500f, 70f, 1900f, true, SkillshotType.SkillshotLine);
@@ -56,16 +57,12 @@ namespace MadlifeThresh
 
             MadlifeThreshMenu.Initialize();
             Game.OnUpdate += OnGameUpdate;
-            //Drawing.OnDraw += Drawings.Drawing_OnDraw;
-            //Drawing.OnEndScene += Drawings.OnDrawEndScene;
+            Drawing.OnDraw += Drawings.Drawing_OnDraw;
+            Drawing.OnEndScene += Drawings.OnDrawEndScene;
         }
 
         private static void OnGameUpdate(EventArgs args)
         {
-            if (MadlifeThreshMenu._menu.Item("Thresh.Madlife.Active").IsActive())
-            {
-                MadlifeHook();
-            }
             switch (Orbwalker.ActiveMode)
             {
                 case Orbwalking.OrbwalkingMode.Combo:
@@ -108,10 +105,10 @@ namespace MadlifeThresh
             }
         }
 
-        private static void MadlifeHook()
-        {
-            throw new NotImplementedException();
-        }
+        //private static void MadlifeHook()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         private static void ThrowLantern()
         {
