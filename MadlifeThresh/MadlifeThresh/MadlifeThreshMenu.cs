@@ -49,8 +49,7 @@ namespace MadlifeThresh
 
             //E Settings
             var eMenu = _menu.AddSubMenu(new Menu("E Menu", "EMenu"));
-            eMenu.AddItem(new MenuItem("Thresh.E.Pull", "Pull").SetValue(true));
-            eMenu.AddItem(new MenuItem("Thresh.E.Push", "Push").SetValue(true));
+            eMenu.AddItem(new MenuItem("Thresh.E", "Pull ON/Push OFF").SetValue(true));
 
             //Interrupt
             var interruptMenu = _menu.AddSubMenu(new Menu("Interrupt", "Interrupt"));

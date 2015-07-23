@@ -137,20 +137,20 @@ namespace MadlifeThresh
             //        Utility.DelayAction.Add(250 - Game.Ping / 2 + 10, () => spells[Spells.Q2].Cast());
             //    }
             //}
-            var qT = TargetSelector.GetTarget(spells[Spells.Q].Range, TargetSelector.DamageType.Magical);
+            var T = TargetSelector.GetTarget(spells[Spells.Q].Range, TargetSelector.DamageType.Magical);
 
             if (spells[Spells.Q].IsReady() && MadlifeThreshMenu._menu.Item("Thresh.Combo.Q").GetValue<bool>())
             {
 
-                spells[Spells.Q].CastIfHitchanceEquals(qT, HitChance.High);
-                if (qT.HasBuff(ThreshQBuff))
+                spells[Spells.Q].CastIfHitchanceEquals(T, HitChance.High);
+                if (T.HasBuff(ThreshQBuff))
                 {
                     FirstQTime = System.Environment.TickCount;
                 }
             }
 
             if (spells[Spells.Q2].IsReady() && MadlifeThreshMenu._menu.Item("Thresh.Combo.Q2").GetValue<bool>() &&
-                System.Environment.TickCount - FirstQTime > 3000f && qT.HasBuff(ThreshQBuff))
+                System.Environment.TickCount - FirstQTime > 3000f && T.HasBuff(ThreshQBuff))
             {
                 spells[Spells.Q2].Cast();
             }
@@ -158,6 +158,18 @@ namespace MadlifeThresh
             if (spells[Spells.W].IsReady() && MadlifeThreshMenu._menu.Item("Thresh.Combo.W").GetValue<bool>())
             {
                 ThrowLantern();
+            }
+
+            if (spells[Spells.E].IsReady() && MadlifeThreshMenu._menu.Item("Thresh.Combo.E").GetValue<bool>() && Vector3.Distance(T.Position, Player.Position) < spells[Spells.E].Range)
+            {
+                if (MadlifeThreshMenu._menu.Item("Thresh.E").GetValue<bool>())
+                {
+                    spells[Spells.E].Cast(T.Position.Extend(Player.Position, Vector3.Distance(T.Position, Player.Position) + 400));
+                }
+                else
+                {
+                    spells[Spells.E].Cast(T.Position);
+                }
             }
 
         }
