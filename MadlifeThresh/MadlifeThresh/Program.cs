@@ -10,7 +10,7 @@ using SharpDX;
 namespace MadlifeThresh
 {
     internal class Program
-    {      
+    {
         static void Main(string[] args)
         {
             CustomEvents.Game.OnGameLoad += MadlifeThresh.Game_OnGameLoad;

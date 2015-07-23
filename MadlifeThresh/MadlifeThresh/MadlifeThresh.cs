@@ -57,8 +57,8 @@ namespace MadlifeThresh
 
             MadlifeThreshMenu.Initialize();
             Game.OnUpdate += OnGameUpdate;
-            Drawing.OnDraw += Drawings.Drawing_OnDraw;
-            Drawing.OnEndScene += Drawings.OnDrawEndScene;
+            //Drawing.OnDraw += Drawings.Drawing_OnDraw;
+            //Drawing.OnEndScene += Drawings.OnDrawEndScene;
         }
 
         private static void OnGameUpdate(EventArgs args)
@@ -154,7 +154,7 @@ namespace MadlifeThresh
                 }
             }
 
-            if (spells[Spells.Q2].IsReady() && MadlifeThreshMenu._menu.Item("Thresh.Combo.Q2").GetValue<bool>() && 
+            if (spells[Spells.Q2].IsReady() && MadlifeThreshMenu._menu.Item("Thresh.Combo.Q2").GetValue<bool>() &&
                 System.Environment.TickCount - FirstQTime > 1500f && qT.HasBuff(ThreshQBuff))
             {
                 spells[Spells.Q2].Cast();

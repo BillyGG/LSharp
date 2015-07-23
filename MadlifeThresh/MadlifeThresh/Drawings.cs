@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MadlifeThresh
 {
-    class Drawings
+    internal class Drawings
     {
         internal static void Drawing_OnDraw(EventArgs args)
         {
