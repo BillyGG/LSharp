@@ -150,7 +150,7 @@ namespace MadlifeThresh
             }
 
             if (spells[Spells.Q2].IsReady() && MadlifeThreshMenu._menu.Item("Thresh.Combo.Q2").GetValue<bool>() &&
-                System.Environment.TickCount - FirstQTime > 1500f && qT.HasBuff(ThreshQBuff))
+                System.Environment.TickCount - FirstQTime > 3000f && qT.HasBuff(ThreshQBuff))
             {
                 spells[Spells.Q2].Cast();
             }
