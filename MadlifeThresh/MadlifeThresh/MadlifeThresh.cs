@@ -18,13 +18,11 @@ namespace MadlifeThresh
 
     internal class MadlifeThresh
     {
-        private const string ChampName = "Thresh";
 
         public static Orbwalking.Orbwalker Orbwalker;
         public static CharacterData CharData;
         public static Obj_AI_Hero Player { get { return ObjectManager.Player; } }
         public static Obj_AI_Base Minionerimo;
-        private static Notification notification;
 
         private static MadlifeThreshMenu _menu;
         private static Spell _q;
@@ -49,9 +47,6 @@ namespace MadlifeThresh
 
         public static void Game_OnGameLoad(EventArgs args)
         {
-            if (CharData.BaseSkinName != ChampName)
-                return;
-
             spells[Spells.Q].SetSkillshot(0.500f, 70f, 1900f, true, SkillshotType.SkillshotLine);
             spells[Spells.Q2].SetSkillshot(0.500f, 70f, 1900f, true, SkillshotType.SkillshotLine);
 
