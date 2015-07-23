@@ -10,7 +10,7 @@ using Color = System.Drawing.Color;
 
 namespace MadlifeThresh
 {
-    internal class MadlifeThreshMenu
+    public class MadlifeThreshMenu
     {
 
         public static Menu _menu;
