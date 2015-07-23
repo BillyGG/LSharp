@@ -164,17 +164,17 @@ namespace MadlifeThresh
 
         private static void Harass()
         {
-            throw new NotImplementedException();
+            return;
         }
 
         private static void Clear()
         {
-            throw new NotImplementedException();
+            return;
         }
 
         private static void LastHit()
         {
-            throw new NotImplementedException();
+            return;
         }
     }
 }
