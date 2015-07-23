@@ -59,6 +59,10 @@ namespace MadlifeThresh
 
         private static void OnGameUpdate(EventArgs args)
         {
+            if (MadlifeThreshMenu._menu.Item("Thresh.mlh.active").IsActive())
+            {
+                MadlifeHook();
+            }
             switch (Orbwalker.ActiveMode)
             {
                 case Orbwalking.OrbwalkingMode.Combo:

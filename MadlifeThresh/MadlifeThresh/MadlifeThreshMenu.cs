@@ -40,6 +40,12 @@ namespace MadlifeThresh
             comboMenu.AddItem(new MenuItem("Thresh.Combo.separator", ""));
             comboMenu.AddItem(new MenuItem("Thresh.Combo.Ignite", "Use Ignite").SetValue(true));
 
+            //Madlife Hook Menu
+            var mlhMenu = _menu.AddSubMenu(new Menu("MLH", "Madlife Hook Config"));
+            mlhMenu.AddItem(new MenuItem("Thresh.mlh.active", "Press this key to throw a Madlife hook").SetValue(new KeyBind("G".ToCharArray()[0], KeyBindType.Press)));
+            mlhMenu.AddItem(new MenuItem("Thresh.mlh.dashes", "Throw at Flash Range").SetValue(true));
+            mlhMenu.AddItem(new MenuItem("Thresh.mlh.dashes", "Throw at Dash Range (Ezreal, Graves, Lucian)").SetValue(false));
+
             //Clear
 
             //Harass
