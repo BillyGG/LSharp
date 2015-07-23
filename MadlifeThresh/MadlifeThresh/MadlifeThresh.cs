@@ -34,6 +34,7 @@ namespace MadlifeThresh
         public static String ThreshQBuff = "threshqfakeknockup";
         public static float FirstQTime;
 
+        public static SpellSlot Summoner_Flash = Player.GetSpellSlot("summonerflash");
         public static float FlashRange = 450f;
 
         public static Dictionary<Spells, Spell> spells = new Dictionary<Spells, Spell>()
@@ -102,7 +103,17 @@ namespace MadlifeThresh
 
         private static void MadlifeHook()
         {
-            throw new NotImplementedException();
+            var target = TargetSelector.GetTarget(1000f, TargetSelector.DamageType.Magical);
+            
+            if (target.GetSpellSlot("summonerflash").IsReady() && spells[Spells.Q].IsReady())
+            {
+                spells[Spells.Q].Cast(target.Position + FlashRange);
+                if (target.HasBuff(ThreshQBuff))
+                {
+
+                    Console.WriteLine("Madlife hooked");
+                }
+            }
         }
 
         private static void ThrowLantern()
