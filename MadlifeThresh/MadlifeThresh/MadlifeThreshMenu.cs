@@ -70,6 +70,8 @@ namespace MadlifeThresh
 
             _menu.AddToMainMenu();
 
+            Console.WriteLine("Menu Loaded");
+
         }
     }
 }
